@@ -1,16 +1,58 @@
-# React + Vite
+# Simple Tasks UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React (Vite) frontend that consumes a Tasks API and supports basic CRUD operations  
+(Create, Read, Update, Delete) for tasks.
 
-Currently, two official plugins are available:
+The app was built to work with a mock API during development and can easily be switched to a real backend by changing the API base URL.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
+- Node.js (v18 or later recommended)
+- npm (npm install)
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Run the App
+npm run dev
 
-## Expanding the ESLint configuration
+### Switching from Mock to Real Api
+- Update VITE_APP_API_URL to point to the real API.
+- Restart the dev server.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Application Structure
+### App.jsx
+- Root component
+- Fetches tasks on page load
+- Manages global state (tasks, loading, error)
+- Passes handlers to child components
+
+### TaskForm.jsx
+- Form for creating new tasks
+-Fields:
+title (required)
+description (optional)
+status (pending, in-progress, done)
+priority (low, medium, high)
+Calls the create task API and refreshes the list on success
+
+### TaskList.jsx
+- Displays a list of all tasks
+- Renders each task using TaskItem
+
+### TaskItem.jsx
+- Displays a single task
+- Allows updating:
+status
+priority
+
+- Sends full task updates upward (PUT semantics)
+
+- Includes a delete button with confirmation
+
+### UX Features
+
+- Loading state while fetching tasks
+
+- Error message when API calls fail
+
+Disabled buttons during requests
+
+Simple confirmation before deleting tasks
