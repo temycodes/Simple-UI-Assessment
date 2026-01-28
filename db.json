@@ -1,0 +1,53 @@
+{
+  "tasks": [
+    {
+      "id": "123",
+      "title": "Sample task",
+      "description": "Optional description",
+      "status": "done",
+      "priority": "medium"
+    },
+    {
+      "id": "bf61",
+      "title": "Prayer",
+      "description": "Praying this morning",
+      "status": "done",
+      "priority": "high"
+    },
+    {
+      "id": "6c2f",
+      "title": "Classes",
+      "description": "9 to 5pm classes ",
+      "status": "in-progress",
+      "priority": "medium"
+    },
+    {
+      "id": "49e3",
+      "title": "Watch Football",
+      "description": "Arsenal vs Man U",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "f1f3",
+      "title": "Buy Groceries",
+      "description": "food stuffs",
+      "status": "in-progress",
+      "priority": "low"
+    },
+    {
+      "id": "9a66",
+      "title": "Cooking",
+      "description": "beans",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "b5b6",
+      "title": "Coding ",
+      "description": "Coding everyday",
+      "status": "pending",
+      "priority": "high"
+    }
+  ]
+}
